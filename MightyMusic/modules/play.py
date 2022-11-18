@@ -634,7 +634,7 @@ async def play(_, message: Message):
         return await lel.delete()
 
 
-@Client.on_message(filters.command("dplay") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("dplay") & filters.group)
 async def deezer(client: Client, message_: Message):
     global que
     lel = await message_.reply("🔄 **Memproses Lagu tersebut**")
@@ -762,7 +762,7 @@ async def deezer(client: Client, message_: Message):
     os.remove("final.png")
 
 
-@Client.on_message(filters.command("splay") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("splay") & filters.group)
 async def jiosaavn(client: Client, message_: Message):
     global que
     lel = await message_.reply("🔄 **Memproses Lagu**")
