@@ -124,7 +124,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     os.remove("background.png")
 
 
-@Client.on_message(filters.command("playlist") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("playlist") & filters.group)
 async def playlist(client, message):
     global que
     queue = que.get(message.chat.id)
@@ -190,7 +190,7 @@ def r_ply(type_):
     return mar
 
 
-@Client.on_message(filters.command("current") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("current") & filters.group)
 async def ee(client, message):
     queue = que.get(message.chat.id)
     stats = updated_stats(message.chat, queue)
@@ -200,7 +200,7 @@ async def ee(client, message):
         await message.reply("Tidak ada instans VC yang berjalan dalam obrolan ini")
 
 
-@Client.on_message(filters.command("player") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("player") & filters.group)
 @authorized_users_only
 async def settings(client, message):
     playing = None
