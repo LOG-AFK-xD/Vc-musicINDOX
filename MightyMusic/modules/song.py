@@ -254,7 +254,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.command("saavn") & ~filters.edited)
+@Client.on_message(filters.command("saavn"))
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:
@@ -293,7 +293,7 @@ async def jssong(_, message):
 # Deezer Music
 
 
-@Client.on_message(filters.command("deezer") & ~filters.edited)
+@Client.on_message(filters.command("deezer"))
 async def deezsong(_, message):
     global is_downloading
     if len(message.command) < 2:
